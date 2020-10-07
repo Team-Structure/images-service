@@ -1,7 +1,21 @@
-const mongoose = require('mongoose');
+const mysql = require('mysql');
+const mysqlConfig = require('./config.js');
 
-mongoose.connect('mongodb://localhost/productImages');
+const connection = mysql.createConnection(mysqlConfig);
 
-const db = mongoose.connection;
-db.on('error', () => { console.error.bind(console, 'connection error:'); });
-db.once('open', () => { console.log('connected to db!'); });
+const getProductImages = function (callback, product_id) {
+
+  var q = `SELECT * FROM productImages WHERE product_id = ${product_id}`;
+
+  connection.query(q, (err, results) => {
+    if (err) {
+      console.log('getProductImages error');
+      callback(err, null);
+    } else {
+      console.log('getProductImages success');
+      callback(null, results);
+    }
+  })
+};
+
+module.exports = { getProductImages };

@@ -17,7 +17,7 @@ module.exports = {
     ]
   },
   output: {
-    filename: 'bundle.js',
+    filename: 'bundle-images-service.js',
     path: __dirname + '/client/dist'
   },
   resolve: {
