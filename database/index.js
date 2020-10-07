@@ -3,8 +3,8 @@ const mysqlConfig = require('./config.js');
 
 const connection = mysql.createConnection(mysqlConfig);
 
-const getProductImages = function (callback, productId) {
-  const q = `SELECT * FROM productImages WHERE product_id = ${productId}`;
+const getProductImages = (productId, callback) => {
+  const q = `SELECT * FROM product_images WHERE product_id = ${productId}`;
 
   connection.query(q, (err, results) => {
     if (err) {
