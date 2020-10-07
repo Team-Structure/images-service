@@ -11,7 +11,6 @@ const getProductImages = (productId, callback) => {
       console.log('getProductImages error');
       callback(err, null);
     } else {
-      console.log('getProductImages success');
       callback(null, results);
     }
   });

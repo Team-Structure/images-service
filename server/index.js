@@ -12,7 +12,6 @@ app.listen(port, () => {
 });
 
 app.get('/api/productImages', (req, res) => {
-  console.log('app.get to /api/images');
   const id = req.query.productId;
 
   db.getProductImages(id, (err, results) => {

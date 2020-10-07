@@ -8,7 +8,7 @@ class ProductImagesService extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      productId: 3,
+      productId: 36,
       productImages: [],
       currentImage: null,
     };
