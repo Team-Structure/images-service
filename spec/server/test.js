@@ -1,4 +1,4 @@
-const config = require('../database/config.js');
+const config = require('../../database/config.js');
 const mysql = require('mysql')
 const request = require('supertest');
 
@@ -10,7 +10,7 @@ const port = 3033;
 describe('Server Tests', () => {
   beforeAll((done) => {
     app.listen(port, () => {
-      console.log(`listening on port ${port}`);
+      console.log(`listening for tests on port ${port}`);
       done();
     });
   })
