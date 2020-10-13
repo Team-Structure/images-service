@@ -8,7 +8,7 @@ class ProductImagesService extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      productId: 36,
+      productId: this.props.productId,
       productImages: [],
       currentImage: null,
     };
@@ -28,6 +28,7 @@ class ProductImagesService extends React.Component {
         });
       },
       error: (error) => {
+        console.log('error!')
         console.error(error);
       },
     });
@@ -47,5 +48,6 @@ class ProductImagesService extends React.Component {
     );
   }
 }
+export default ProductImagesService;
 
-ReactDOM.render(<ProductImagesService />, document.getElementById('productImagesService'));
+ReactDOM.render(<ProductImagesService productId={100} />, document.getElementById('productImagesService'));
