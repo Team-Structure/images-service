@@ -7,9 +7,9 @@ import ImageViewer from './ImageViewer';
 class ProductImagesService extends React.Component {
   constructor(props) {
     super(props);
-    const { productId } = this.props;
+    const { match } = this.props;
     this.state = {
-      productId,
+      productId: match.params.id,
       productImages: [],
       currentImage: null,
     };
