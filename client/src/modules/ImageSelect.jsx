@@ -1,13 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-class ImageSelect extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return <img className='thumbnailBox' onClick={this.props.changeViewer} src={this.props.img} />;
-  }
+function ImageSelect(props) {
+  const { changeViewer, img } = props;
+  return (
+    <button id="imageSelect" onClick={changeViewer} onKeyDown={changeViewer} type="button">
+      <img className="thumbnailBox" src={img} alt="?" />
+    </button>
+  );
 }
+
+ImageSelect.propTypes = {
+  changeViewer: PropTypes.func.isRequired,
+  img: PropTypes.string.isRequired,
+};
 
 export default ImageSelect;

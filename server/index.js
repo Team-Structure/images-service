@@ -25,5 +25,3 @@ app.get('/api/productImages', (req, res) => {
     }
   });
 });
-
-module.exports = app;

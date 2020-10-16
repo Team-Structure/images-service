@@ -1,13 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-class ImageViewer extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return <img id='viewerBox' src={this.props.image} />;
-  }
+function ImageViewer(props) {
+  const { image } = props;
+  return <img id="viewerBox" src={image} alt="?" />;
 }
+
+ImageViewer.propTypes = {
+  image: PropTypes.string.isRequired,
+};
 
 export default ImageViewer;

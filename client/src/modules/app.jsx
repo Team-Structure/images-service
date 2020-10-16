@@ -1,13 +1,15 @@
 import React from 'react';
 import $ from 'jquery';
+import PropTypes from 'prop-types';
 import ImagesSelect from './ImagesSelect';
 import ImageViewer from './ImageViewer';
 
 class ProductImagesService extends React.Component {
   constructor(props) {
     super(props);
+    const { productId } = this.props;
     this.state = {
-      productId: this.props.productId,
+      productId,
       productImages: [],
       currentImage: null,
     };
@@ -27,7 +29,6 @@ class ProductImagesService extends React.Component {
         });
       },
       error: (error) => {
-        console.log('componenent willnt mount right')
         console.error(error);
       },
     });
@@ -47,4 +48,9 @@ class ProductImagesService extends React.Component {
     );
   }
 }
+
+ImagesSelect.propTypes = {
+  productId: PropTypes.number.isRequired,
+};
+
 export default ProductImagesService;

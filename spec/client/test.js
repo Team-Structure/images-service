@@ -1,10 +1,8 @@
 import React from 'react';
-import ReactDom from 'react-dom';
-import { shallow, mount, configure } from 'enzyme';
-import request from 'supertest';
-import ProductImagesService from '../../client/src/modules/app'
+import { shallow, configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import ProductImagesService from '../../client/src/modules/app';
 
-const Adapter = require('enzyme-adapter-react-16');
 configure({ adapter: new Adapter() });
 
 describe('Server Tests', () => {
@@ -17,5 +15,4 @@ describe('Server Tests', () => {
     wrapper.update();
     expect(wrapper.state('productId')).toEqual(6);
   });
-
 });
