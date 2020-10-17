@@ -66,9 +66,9 @@ class ImagesSelect extends React.Component {
   }
 }
 
-ImagesSelect.propTypes = {
-  thumbnails: PropTypes.instanceOf(Array).isRequired,
-  changeViewer: PropTypes.func.isRequired,
-};
+// ImagesSelect.propTypes = {
+//   thumbnails: PropTypes.instanceOf(Array).isRequired,
+//   changeViewer: PropTypes.func.isRequired,
+// };
 
 export default ImagesSelect;

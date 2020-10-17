@@ -14,8 +14,8 @@ function ImageViewer(props) {
   return <VBo id="viewerBox" src={image} alt="?" />;
 }
 
-ImageViewer.propTypes = {
-  image: PropTypes.string.isRequired,
-};
+// ImageViewer.propTypes = {
+//   image: PropTypes.string.isRequired,
+// };
 
 export default ImageViewer;
