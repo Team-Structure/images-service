@@ -5,7 +5,7 @@ const db = require('../database');
 const app = express();
 const port = 3003;
 
-app.use(express.static(path.join(__dirname, '/../client/dist')));
+app.use('/', express.static(path.join(__dirname, '/../client/dist')));
 
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
@@ -13,6 +13,7 @@ app.listen(port, () => {
 
 app.get('/api/productImages', (req, res) => {
   const id = req.query.productId;
+  console.log(id)
 
   db.getProductImages(id, (err, results) => {
     if (err) {
@@ -28,5 +29,6 @@ app.get('/api/productImages', (req, res) => {
 
 
 app.get('*', (req, res) => {
+  console.log('blergmergblerg')
   res.sendFile(path.join(__dirname, '../client/dist/index.html'))
 })

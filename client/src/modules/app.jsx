@@ -19,10 +19,12 @@ class ProductImagesService extends React.Component {
 
   componentDidMount() {
     const { productId } = this.state;
+    console.log(productId)
     $.ajax({
       url: '/api/productImages',
       data: { productId },
       success: (results) => {
+        console.log(results)
         this.setState({
           productImages: results.map((result) => result.s3_url),
           currentImage: results[0].s3_url,
@@ -49,8 +51,8 @@ class ProductImagesService extends React.Component {
   }
 }
 
-ImagesSelect.propTypes = {
-  productId: PropTypes.number.isRequired,
-};
+// ImagesSelect.propTypes = {
+//   productId: PropTypes.number.isRequired,
+// };
 
 export default ProductImagesService;
