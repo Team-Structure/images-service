@@ -5,6 +5,11 @@ const db = require('../database');
 const app = express();
 const port = 3003;
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
+
 app.use('/', express.static(path.join(__dirname, '/../client/dist')));
 
 app.listen(port, () => {
@@ -29,6 +34,5 @@ app.get('/api/productImages', (req, res) => {
 
 
 app.get('*', (req, res) => {
-  console.log('blergmergblerg')
   res.sendFile(path.join(__dirname, '../client/dist/index.html'))
 })

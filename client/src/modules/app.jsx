@@ -21,10 +21,9 @@ class ProductImagesService extends React.Component {
     const { productId } = this.state;
     console.log(productId)
     $.ajax({
-      url: '/api/productImages',
+      url: 'http://localhost:3003/api/productImages',
       data: { productId },
       success: (results) => {
-        console.log(results)
         this.setState({
           productImages: results.map((result) => result.s3_url),
           currentImage: results[0].s3_url,
