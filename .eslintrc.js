@@ -22,6 +22,9 @@ module.exports = {
   rules: {
     'no-console': 'off',
     'no-useless-constructor': 0,
-    "react/prefer-stateless-function": "off",
+    'react/prop-types': 0,
+    'react/prefer-stateless-function': 'off',
+    'no-else-return': 'off',
+    'react/jsx-filename-extension': [1, { 'extensions': ['.js', '.jsx'] }]
   },
 };

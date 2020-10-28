@@ -18,7 +18,6 @@ app.listen(port, () => {
 
 app.get('/api/productImages', (req, res) => {
   const id = req.query.productId;
-  console.log(id)
 
   db.getProductImages(id, (err, results) => {
     if (err) {
@@ -32,7 +31,6 @@ app.get('/api/productImages', (req, res) => {
   });
 });
 
-
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/dist/index.html'))
-})
+  res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+});

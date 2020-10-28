@@ -1,32 +1,13 @@
 # Project Name
 
-> Project description
-
-## Related Projects
-
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-
-## Table of Contents
-
-1. [Usage](#Usage)
-1. [Requirements](#requirements)
-1. [Development](#development)
+> Images service for Team Structure's Google Shopping facsimile.
 
 ## Usage
 
-> Some usage instructions
-
-## Requirements
-
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
-
-- Node 6.13.0
-- etc
-
-## Development
+> Replace client/database/config.example.js with a config.js with correct MySQL authentication
+> npm run seed
+> npm run react-dev
+> npm run server-dev
 
 ### Installing Dependencies
 
