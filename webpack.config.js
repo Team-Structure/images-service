@@ -14,6 +14,12 @@ module.exports = {
           }
         }
       },
+      {
+        test: /\.(jpg|jpeg|png)$/,
+        use: {
+          loader: 'file-loader'
+        }
+      }
     ]
   },
   output: {
