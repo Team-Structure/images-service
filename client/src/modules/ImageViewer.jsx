@@ -6,6 +6,7 @@ const ViewerBox = styled.img`
   height: 400px;
   float: left;
   padding: 10px;
+  margin: auto;
 `;
 
 function ImageViewer(props) {

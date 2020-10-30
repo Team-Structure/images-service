@@ -59,6 +59,19 @@ const iD2 = [
   },
 ];
 
+const backup = [
+  {
+    id: 0,
+    product_id: 0,
+    s3_url: 'https://teamstructureshopping.s3.amazonaws.com/icons/error.png',
+  },
+  {
+    id: 0,
+    product_id: 0,
+    s3_url: 'https://teamstructureshopping.s3.amazonaws.com/icons/error.png',
+  },
+]
+
 module.exports = {
-  iD1, iD2,
+  iD1, iD2, backup,
 };

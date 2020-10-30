@@ -18,7 +18,7 @@ const getProductImages = (productId, callback) => {
         console.log('Falling back on hardcoded data for id 3');
         callback(null, hardCode.iD2);
       } else {
-        callback(err, null);
+        callback(err, hardCode.backup);
       }
     } else {
       callback(null, results);
