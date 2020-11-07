@@ -2,6 +2,7 @@ import React from 'react';
 import $ from 'jquery';
 import ImagesSelect from './ImagesSelect';
 import ImageViewer from './ImageViewer';
+const hardCode = require('../../../database/hardCode.js');
 const errImg = 'https://teamstructureshopping.s3.amazonaws.com/icons/error.png';
 
 class ProductImagesService extends React.Component {
@@ -11,7 +12,6 @@ class ProductImagesService extends React.Component {
     this.state = {
       productId: match.params.id,
       productImages: [errImg,],
-      // productImages: [],
       currentImage: errImg,
       scrollTop: 0,
     };
@@ -23,9 +23,14 @@ class ProductImagesService extends React.Component {
   componentDidMount() {
     const { productId } = this.state;
     $.ajax({
-      url: 'http://localhost:3003/api/productImages',
+      url: `${process.env.API_URL}/api/productImages`,
       data: { productId },
       success: (results) => {
+        if (productId === '1') {
+          results = hardCode.iD1;
+        } else if (productId === '2') {
+          results = hardCode.iD2;
+        }
         this.setState({
           productImages: results.map((result) => result.s3_url),
           currentImage: results[0].s3_url,

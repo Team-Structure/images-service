@@ -9,18 +9,9 @@ const getProductImages = (productId, callback) => {
 
   connection.query(q, (err, results) => {
     if (err) {
-      console.log('getProductImages error');
-      if (productId === 1) {
-        console.log('Falling back on hardcoded data for id 1');
-        callback(null, hardCode.iD1);
-      }
-      if (productId === 2) {
-        console.log('Falling back on hardcoded data for id 3');
-        callback(null, hardCode.iD2);
-      } else {
-        callback(err, hardCode.backup);
-      }
+      callback(err, null);
     } else {
+      console.log(results);
       callback(null, results);
     }
   });

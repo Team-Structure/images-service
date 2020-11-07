@@ -1,0 +1,18 @@
+version: '3'
+services:
+  app:
+    container_name: images_service
+    restart: always
+    build: .
+    ports:
+      - '3003:3003'
+    links:
+      - mysql
+  mysql:
+    container_name: mysqlDB
+    image: mysql
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=FECTeamStructure
+    volumes:
+      - /data/mysql:/var/lib/mysql

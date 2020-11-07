@@ -9,7 +9,9 @@
   },
   "scripts": {
     "react-dev": "webpack -d --watch",
+    "build": "webpack --mode=production",
     "server-dev": "nodemon server/index.js",
+    "start": "node server/index.js",
     "lint": "eslint --ext .js --ext .jsx client/src/index.jsx client/src/modules/** server/** database/**.js spec/**",
     "seed": "mysql -u root -p < database/schema.sql && node ./database/seed.js",
     "client-test": "jest spec/client/test.js",
