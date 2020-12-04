@@ -6,11 +6,12 @@ const db = require('../database');
 const app = express();
 const port = 3003;
 
+app.use(compression());
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   next();
 });
-app.use(compression());
+
 app.use('/', express.static(path.join(__dirname, '/../client/dist')));
 
 app.listen(port, () => {
