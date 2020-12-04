@@ -2,6 +2,7 @@ import React from 'react';
 import $ from 'jquery';
 import ImagesSelect from './ImagesSelect';
 import ImageViewer from './ImageViewer';
+const errImg = 'https://teamstructureshopping.s3.amazonaws.com/icons/error.png';
 
 class ProductImagesService extends React.Component {
   constructor(props) {
@@ -9,8 +10,9 @@ class ProductImagesService extends React.Component {
     const { match } = this.props;
     this.state = {
       productId: match.params.id,
-      productImages: [],
-      currentImage: null,
+      productImages: [errImg,],
+      // productImages: [],
+      currentImage: errImg,
       scrollTop: 0,
     };
 
